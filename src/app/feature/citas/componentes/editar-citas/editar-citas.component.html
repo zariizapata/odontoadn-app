@@ -1,0 +1,75 @@
+<div class="card bg-light">
+    <div class="card-header"><h2>{{ titulo }}</h2></div>
+    <div class="card-body">
+        <form>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="cedula" class="">Cedula Paciente:</label>
+                    <input type="text" maxlength="7" minlength="7" class="form-control" id="cedula" name="cedula"  [(ngModel)]="cita.cedula">
+                </div>
+                <div class="col-sm-6">
+                    <label for="nombre" class="">Nombre Paciente:</label>
+                    <input type="text" maxlength="7" minlength="7" class="form-control" id="nombre" name="nombre"  [(ngModel)]="cita.nombre">
+                </div>                
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <label for="celular" class="">Celular:</label>
+                    <input type="text" class="form-control" id="celular" name="celular"  [(ngModel)]="cita.telefono">
+                </div>
+                <div class="col-sm-6">
+                    <label for="tipo" class=""> Tipo de servicio:</label>
+                    <select class="form-control" name="tipo" id="tipo"  [(ngModel)]="cita.tipo">
+                        <option value="Blanqueamiento">Blanqueamiento</option>
+                        <option value="Reparacion estetica">Reparacion Estetica</option>
+                        <option value="Limpieza">Limpieza</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">  
+                <div class="col-sm-6">
+                    <label for="fecha" class="">Fecha Cita:</label>
+                    <input type="date"  class="form-control" id="fecha" name="fecha"  [(ngModel)]="cita.fecha">
+                </div>
+                <div class="col-sm-6">
+                    <label for="hora" class="">Hora:</label>
+                    <input type="time" maxlength="7" minlength="7" class="form-control" id="hora" name="hora"  [(ngModel)]="cita.hora">
+                </div>
+            </div>
+            <div class="form-group row">  
+                <div class="col-sm-6">
+                     <label for="medico" class="">Medico:</label>
+                     <select class="form-control" name="medico" id="medico" [(ngModel)]="cita.medico"  [(ngModel)]="cita.tipo">
+                        <option value="Daniel Perez">Daniel Perez</option>
+                        <option value="Camilo Calderon">Camilo Calderon</option>
+                        <option value="Laura Rodriguez">Laura Rodriguez</option>
+                     </select>
+                 </div>
+                 <div class="col-sm-6">
+                     <label for="tarifa" class="">Tarifa:</label>
+                     <input type="number" maxlength="7" minlength="7" class="form-control" id="tarifa" name="tarifa"  [(ngModel)]="cita.tarifa">
+                 </div>
+                 
+             </div>
+            <div class="form-group row">  
+                <div class="col-sm-6">
+                     <label for="hora" class="">Estado:</label>
+                     <select class="form-control" name="estado" id="estado" [(ngModel)]="cita.estado">
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Pagado">Pagado</option>
+                    </select>
+                 </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2">
+                    <button class="btn btn-primary form-control" (click)='actualizar()' role="button">Guardar</button>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-danger form-control" type="button" [routerLink]="['/listar']" >
+                        Volver
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

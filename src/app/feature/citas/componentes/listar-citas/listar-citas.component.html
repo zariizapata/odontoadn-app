@@ -1,0 +1,43 @@
+<div class="card mb-3">
+    <div class="card-body text-primary">
+        <h3 class="card-title">{{titulo}}</h3>
+        <div class="my-2 text-right pull-right">
+            &nbsp;
+            <button class="btn btn-rounded btn-primary" type="button" id="btnnuevacita" [routerLink]="['/crear']">
+                Nueva Cita
+            </button>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Médico </th>
+                    <th>Cedula</th>
+                    <th>Nombre</th>
+                    <th>Hora</th>
+                    <th>Estado</th>
+                    <th type="date">Fecha Consulta</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cita of listarConsultas">
+                    <td>{{cita.medico}} </td>
+                    <td>{{cita.cedula}}</td>
+                    <td>{{cita.nombre}}</td>
+                    <td>{{cita.hora}}</td>
+                    <td>{{cita.estado}}</td>
+                    <td>{{cita.fecha  | date: 'dd-MM-yyyy'}}</td>
+                    <td colspan="2" class="text-center">
+                        <button type="button" name="editar" class="btn btn-primary btn-sm rounded-circle"><i
+                                class="fa fa-pencil" [routerLink]="['/editar', cita.id]" routerLinkActive="active"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="my-2 text-right pull-right">
+            <button class="btn btn-rounded btn-danger" type="button" [routerLink]="['/home']" routerLinkActive="active">
+                Volver
+            </button>
+        </div>
+    </div>
+</div>
